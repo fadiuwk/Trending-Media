@@ -1,0 +1,24 @@
+<nav class="py-2 fixed-top">
+
+  <div class="container d-flex flex-wrap  justify-content-between align-items-center">
+    
+    <div class="d-flex align-items-center">
+      <div class="logo p-2 me-2">
+        <a routerLink="/">
+          <h2 class="mb-0">Noxe</h2>
+        </a>
+      </div>
+    </div>
+
+    <ul class="d-flex list-unstyled">
+      <li><a *ngIf="isLogin" class="p-2" routerLink="/"><i class="fa-brands fa-facebook-f"></i></a></li>
+      <li><a *ngIf="isLogin" class="p-2" routerLink="/"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a *ngIf="isLogin" class="p-2" routerLink="/"><i class="fa-brands fa-youtube"></i></a></li>
+      <li><a *ngIf="isLogin" class="p-2" routerLink="/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+      <li><a *ngIf="isLogin" class="p-2" routerLink="/"><i class="fa-brands fa-dribbble"></i></a></li>
+      <li><a *ngIf="!isLogin" class="p-2"  routerLinkActive="active-link" routerLink="/login">Login</a></li>
+      <li><a *ngIf="!isLogin" class="p-2"  routerLinkActive="active-link" routerLink="/register">Register</a></li>
+      <li><a *ngIf="isLogin" (click)="callLogout()" class="p-2" routerLink="/logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>

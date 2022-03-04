@@ -1,0 +1,27 @@
+
+<div class="container my-5">
+    
+<div class="row py-5">
+    <div class="col-md-4">
+        <div class="item">
+            <img [src]="imgPrefix+movieDetails.poster_path" class="w-100" alt="">
+        </div>
+    </div>
+    <div class="col-md-8">
+        <h3 class="text-red fw-bolder mb-3 ">{{movieDetails.original_title}}</h3>
+        <p class="text-muted">{{movieDetails.overview}}</p>
+        <ul class="list-unstyled">
+            <h4 class="text-red fw-bolder">Genres</h4>
+            <li *ngFor="let genre of movieDetails.genres">
+                {{genre.name}}
+            </li>
+        </ul>
+        <ul class="list-unstyled">
+            <h4 class="text-red fw-bolder">Production Companies</h4>
+            <li *ngFor="let prod of movieDetails.production_companies">
+                {{prod.name}}
+            </li>
+        </ul>
+    </div>
+</div>
+</div>

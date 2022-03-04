@@ -1,0 +1,23 @@
+
+<div class="container my-5">
+    <form action=""  class="py-5" (ngSubmit)="submitLogin()" [formGroup]="loginForm">
+
+        <label for="email">Email</label>
+        <input formControlName="email" class="form-control my-2" type="Email" id="email" >
+        <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="alert text-danger ">
+            <p *ngIf="loginForm.get('email')?.errors?.['required']">* email is required</p>
+            <p *ngIf="loginForm.get('email')?.errors?.['email']">* email is Invalid</p>
+        </div>
+    
+        <label for="password">Password</label>
+        <input formControlName="password" class="form-control my-2" type="password" id="password" >
+        <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="alert text-danger ">
+            <p *ngIf="loginForm.get('password')?.errors?.['required']">* password is required</p>
+            <!-- <p *ngIf="loginForm.get('password')?.errors?.['pattern']">* password is min length '8' char or number </p> -->
+        </div>
+        <div *ngIf="errorLogin" class="alert alert-danger text-center">
+            <h3>{{errorLogin}}</h3>
+        </div>
+        <button [disabled] = "loginForm.invalid" type="submit" class="btn btn-outline-info w-100 my-4">Login</button>
+    </form>
+</div>

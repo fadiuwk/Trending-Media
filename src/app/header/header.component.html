@@ -1,0 +1,17 @@
+<header>
+
+  <div class="container-fluid px-0 my-5">
+    <owl-carousel-o [options]="customOptions">
+
+      <h2>Top Trending Media Right Now.</h2>
+  
+      <ng-container *ngFor="let movie of headerTrendMovie">
+        <ng-template carouselSlide [id]="movie.id">
+          <img [src]="imgPrefix+movie.poster_path">
+        </ng-template>
+      </ng-container>
+  
+    </owl-carousel-o>
+  </div>
+
+</header>
